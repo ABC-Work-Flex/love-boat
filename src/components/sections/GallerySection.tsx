@@ -40,18 +40,22 @@ export default function GallerySection() {
   return (
     <section
       id="gallery"
-      className="border-t border-slate-200/80 bg-white py-20"
+      className="border-t border-[#d9d0c2] bg-[#fdfcf8] py-16 sm:py-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-0">
-        <h2 className="text-xs font-semibold tracking-[0.25em] uppercase text-slate-500 mb-2">
-          Gallery
-        </h2>
-        <p className="text-sm text-slate-600 mb-8">
-          A simple view of Love Boat from different angles and moments.
-        </p>
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#0f3c5d]">
+              Gallery
+            </h2>
+            <p className="mt-2 text-sm text-[#4b3b33]">
+              A calm, simple view of Love Boat from different angles and
+              moments on the water.
+            </p>
+          </div>
+        </div>
 
-        {/* 5-column grid on md+ screens */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-5">
           {mediaItems.map((item: MediaItem) => (
             <div key={item.id} onClick={() => openItem(item)}>
               <MediaCard item={item} onClick={() => openItem(item)} />
